@@ -1,5 +1,4 @@
 const mysql = require('mysql');
-const jwt = require('jsonwebtoken');
 const config = require('./config');
 
 // Crear una conexión a la base de datos utilizando los valores de configuración
