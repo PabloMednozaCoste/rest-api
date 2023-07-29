@@ -1,6 +1,5 @@
 const db = require('../db');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const config = require('../config');
 
 function registerUser(req, res) {
@@ -56,10 +55,6 @@ function loginUser(req, res) {
       return res.status(401).json({ error: 'Credenciales inválidas' });
     }
 
-    // Generar un token JWT con la información del usuario
-    const token = jwt.sign({ id: user.id, email: user.email }, config.jwt.secret, { expiresIn: '1h' });
-
-    res.json({ token });
   });
 }
 
